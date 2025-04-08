@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c34a1on1c5mo5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_tsyck"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsyck"]
+albedo_color = Color(1, 0.537255, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_igxoa"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="TestPackedScene" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PrismMesh_tsyck")
+surface_material_override/0 = SubResource("StandardMaterial3D_tsyck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_igxoa")
